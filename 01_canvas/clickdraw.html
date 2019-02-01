@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        #slate {border: 1px solid black }
+    </style>
+    <div id="page">
+        <p id="msg">
+        </p>
+        <canvas height="600" width="600" 
+            id="slate" onclick="draw(event)">
+            di dat alt txt
+        </canvas>
+    </div>
+    <div>
+        <button onclick="clearRect()"> Clear Canvas </button>
+        <button onclick="toggle()"> Toggle </button>
+    </div>
+    <script src="clickdraw.js"></script>
+</html>
+
