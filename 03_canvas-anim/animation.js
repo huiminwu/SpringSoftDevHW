@@ -5,6 +5,7 @@ var growing = false;
 var c = document.getElementById("playground");
 var ctx = c.getContext("2d");
 var drawDot = function() {
+    clearRect();
     if (!moving) {
         requestID = window.requestAnimationFrame(drawDot);
         console.log(requestID);
@@ -35,6 +36,10 @@ var stopIt = function() {
         cancelAnimationFrame(requestID);
     }
 };
+
+var clearRect = function() {
+    ctx.clearRect(0,0,500,500);
+}
 
 var dotButton = document.getElementById("circle");
 dotButton.addEventListener("click", drawDot);
