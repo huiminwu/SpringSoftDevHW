@@ -1,3 +1,9 @@
+//Toronto Blu-rays
+//Hui Min Wu and Mohtasim Howlader
+//SoftDev pd8
+//K03 -- They lock us in the tower whenever we get caught
+//2019-02-05
+
 var requestID;
 var radius = 0;
 var moving = false;
