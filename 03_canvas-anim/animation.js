@@ -31,10 +31,7 @@ var drawDot = function() {
     }
 };
 var stopIt = function() {
-    console.log(requestID);
-    if (moving) {
-        cancelAnimationFrame(requestID);
-    }
+    cancelAnimationFrame(requestID);
 };
 
 var clearRect = function() {
@@ -42,6 +39,9 @@ var clearRect = function() {
 }
 
 var dotButton = document.getElementById("circle");
-dotButton.addEventListener("click", drawDot);
+dotButton.addEventListener("click", function() {
+                                        stopIt();
+                                        drawDot();
+                            });
 var stopButton = document.getElementById("stop");
 stopButton.addEventListener("click", stopIt);
