@@ -1,7 +1,8 @@
-// 
+// Team Dundler Gitfflin 
+// Hui Min Wu and Derek Song
 // SoftDev pd8
-// K03 -- canvas-based, JS-driven animation basics
-// 2019-02-06w
+// K04 -- What is it saving the screen from?
+// 2019-02-07
 // --------------------------------------------------
 
 //Used model from "Thluffy" Sinclair
@@ -23,24 +24,25 @@ var bounceDvd = function() {
     var rectY = Math.floor(Math.random() * (c.height - rectHeight));
     var xVel = 1;
     var yVel = 1;
-    //yVel = yVel
-    //xVel = xVel * -1;
     
     var logo = new Image();
     logo.src = "logo_dvd.jpg";
     var dvdLogo = function() {
         requestID = window.requestAnimationFrame(dvdLogo);
+        //addresses all sides of the canvas +  changes direction accordingly
         if(rectX == c.width - rectWidth) {
             xVel = xVel * -1;
         } else if(rectY == c.height - rectHeight) {
             yVel = yVel * -1;
-        } else if(rectX == c.width + rectWidth) {
+        } else if(rectX == 0) {
             xVel = xVel * -1;
-        } else if(rectY == c.width + rectHeight) {
+        } else if(rectY == 0) {
             yVel = yVel * -1;
         }
+        //either subtracts or adds from the x and y coors
         rectX = rectX + (1 * xVel);
         rectY = rectY + (1 * yVel);
+        //draw the image from generated point
         ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
     };
     dvdLogo();
