@@ -58,7 +58,7 @@ def most_freq(text):
     no_reps = list(set(text)) # list of unique words
     freqs = [(i, freq(no_reps[i], text)) for i in range(len(no_reps))] # generate (index, freq) pairs for every unique word
     result = reduce((lambda a,b: a if a[1] > b[1] else b), freqs) # compare list of tuples based on freq
-    return [no_reps[result[0]], result[1]]
+    return [no_reps[result[0]], result[1]] #result[0] is the index of the word in no_reps and result[1] is freq
 
 result = most_freq(words)
 print("The most frequently occurring word is [" + result[0] + "] with frequency " + str(result[1]))
